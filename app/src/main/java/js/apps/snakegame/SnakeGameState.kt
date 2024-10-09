@@ -1,6 +1,7 @@
 package js.apps.snakegame
 
 import android.graphics.Path
+import kotlin.random.Random
 
 data class SnakeGameState(
     val xAxisGridSize: Int = 16,
@@ -14,8 +15,9 @@ data class SnakeGameState(
     companion object{
         fun generateRandomFood(): Coordinate {
             return Coordinate(
-                (0..15).random(),
-                (0..19).random())
+                x  = Random.nextInt(1, 15),
+                y = Random.nextInt(1, 19)
+            )
         }
     }
 }
